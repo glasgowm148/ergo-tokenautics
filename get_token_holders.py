@@ -15,11 +15,10 @@ def get_box_amounts(items,token_id):
     for box in items:
         for asset in box['assets']:
             if asset['tokenId'] == token_id:
-                amount = asset['amount']
-        boxes.append({
-                'boxId' : box['boxId'],
-                'address' : box['address'],
-                'amount' : amount})
+                boxes.append({
+                        'boxId' : box['boxId'],
+                        'address' : box['address'],
+                        'amount' :asset['amount']})
     return boxes
 
 def get_holders(token_id):
